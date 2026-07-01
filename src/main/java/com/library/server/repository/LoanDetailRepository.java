@@ -39,4 +39,5 @@ public interface LoanDetailRepository extends JpaRepository<LoanDetail, Integer>
     boolean existsBorrowingByUserAndBook(@Param("userId") Integer userId,
                                          @Param("bookId") Integer bookId,
                                          @Param("status") String status);
+    // Thêm hàm tính tổng số phiếu mượn
 }
