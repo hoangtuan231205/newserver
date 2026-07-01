@@ -8,9 +8,9 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: library_db       # Tên Database của bạn (sửa lại cho đúng)
-      MYSQL_USER: root             # Tài khoản kết nối (sửa lại cho đúng)
-      MYSQL_PASSWORD: # Mật khẩu kết nối (sửa lại cho đúng)
-      MYSQL_ROOT_PASSWORD:
+      MYSQL_USER: library_user         # Tài khoản ứng dụng (sửa lại cho đúng)
+      MYSQL_PASSWORD: library_pass     # Mật khẩu ứng dụng (sửa lại cho đúng)
+      MYSQL_ROOT_PASSWORD: rootpass    # Mật khẩu root bắt buộc phải có
     ports:
       - "3306:3306"
     volumes:
@@ -21,6 +21,10 @@ services:
     build: .  # Build từ file Dockerfile nằm cùng thư mục
     container_name: springboot_backend_server
     restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db_thu_vien:3306/library_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: library_user
+      SPRING_DATASOURCE_PASSWORD: library_pass
     ports:
       - "8000:8080" # Ánh xạ cổng 8000 ngoài mặt tiền vào cổng 8080 của Spring Boot
     depends_on:
