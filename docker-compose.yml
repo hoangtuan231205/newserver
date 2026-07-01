@@ -26,7 +26,7 @@ services:
       SPRING_DATASOURCE_USERNAME: library_user
       SPRING_DATASOURCE_PASSWORD: library_pass
     ports:
-      - "8000:8080" # Ánh xạ cổng 8000 ngoài mặt tiền vào cổng 8080 của Spring Boot
+      - "8000:80" # Ánh xạ cổng 8000 ngoài mặt tiền vào cổng 8080 của Spring Boot
     depends_on:
       - db_thu_vien # Chờ MySQL chạy lên trước rồi mới chạy Backend
 
