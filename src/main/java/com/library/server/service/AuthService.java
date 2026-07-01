@@ -43,10 +43,10 @@ public class AuthService {
         if (request.getPassword() == null || request.getPassword().trim().isEmpty()) {
             throw new RuntimeException("Mật khẩu không được để trống!");
         }
-        
+
         // Có thể thêm validate độ dài mật khẩu nếu muốn
         if (request.getPassword().length() < 6) {
-             throw new RuntimeException("Mật khẩu phải có ít nhất 6 ký tự!");
+            throw new RuntimeException("Mật khẩu phải có ít nhất 6 ký tự!");
         }
 
         if (userRepository.findByEmail(request.getEmail()).isPresent()) {
@@ -80,9 +80,7 @@ public class AuthService {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             request.getEmail(),
-                            request.getPassword()
-                    )
-            );
+                            request.getPassword()));
         } catch (BadCredentialsException e) {
             // Lỗi sai mật khẩu hoặc email không tồn tại trong hệ thống xác thực
             throw new RuntimeException("Tài khoản hoặc mật khẩu không chính xác!");
@@ -115,7 +113,7 @@ public class AuthService {
                 .build();
 
         return LoginResponseDTO.builder()
-                .message("Đăng nhập thành công!")
+                .message("Đăng nhập thành công! chuyển hướng sang trang chủ")
                 .token(jwtToken)
                 .user(userDto)
                 .build();
