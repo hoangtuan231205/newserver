@@ -8,8 +8,8 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: library_db       # Tên Database của bạn (sửa lại cho đúng)
-      MYSQL_USER: library_user         # Tài khoản ứng dụng (sửa lại cho đúng)
-      MYSQL_PASSWORD: library_pass     # Mật khẩu ứng dụng (sửa lại cho đúng)
+      MYSQL_USER: dev_user         # Tài khoản ứng dụng (sửa lại cho đúng)
+      MYSQL_PASSWORD: dev_password     # Mật khẩu ứng dụng (sửa lại cho đúng)
       MYSQL_ROOT_PASSWORD: rootpass    # Mật khẩu root bắt buộc phải có
     ports:
       - "3306:3306"
