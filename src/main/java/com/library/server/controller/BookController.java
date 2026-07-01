@@ -31,7 +31,7 @@ public class BookController {
     }
     /**
      * API Thêm mới sách: POST http://localhost:8080/api/v1/books
-     * Chú ý: Sử dụng @RequestBody BookRequestDTO thay vì Book Entity trực tiếp.
+     * Sử dụng @RequestBody BookRequestDTO thay vì Book Entity trực tiếp.
      */
     @PostMapping
     public ResponseEntity<Book> create(@RequestBody BookRequestDTO bookRequestDTO) {
