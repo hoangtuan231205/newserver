@@ -107,4 +107,5 @@ public class LoanController {
         List<Object[]> recentLoans = loanService.getRecentLoansForTable();
         return ResponseEntity.ok(recentLoans);
     }
+    // Test commit and CI/CD in backend
 }

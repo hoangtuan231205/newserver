@@ -77,4 +77,6 @@ public class FineService {
         dto.setCreatedAt(fine.getCreatedAt());
         return dto;
     }
+
+    // Logic tính toán phiếu phạt trễ hạn + hư hỏng mất sách
 }
