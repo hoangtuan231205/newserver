@@ -73,7 +73,7 @@ public class LoanController {
             @RequestBody RenewLoanRequestDTO request) {
         try {
             loanService.renewLoanDetail(detailId, request);
-            return ResponseEntity.ok("Gia hạn thành công!");
+            return ResponseEntity.ok("Gia hạn thành công phếu mượn!");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
