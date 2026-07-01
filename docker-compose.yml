@@ -17,9 +17,9 @@ services:
       - db_data:/var/lib/mysql
 
   # 2. Máy chủ Java Spring Boot
-  backend_thu_vien:
+  web_thu_vien:
     build: .  # Build từ file Dockerfile nằm cùng thư mục
-    container_name: springboot_backend_server
+    container_name: web_thu_vien
     restart: always
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db_thu_vien:3306/library_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
